@@ -10,6 +10,9 @@ class Question:
         self.question = question
         self.choices = choices
         self.allow_text = allow_text
+    
+    def __repr__(self):
+        return f'{self.question}'
 
 
 class Survey:
@@ -21,6 +24,9 @@ class Survey:
         self.title = title
         self.instructions = instructions
         self.questions = questions
+    
+    def __repr__(self):
+        return f'{self.title}, {self.instructions}, {self.questions}'
 
 
 satisfaction_survey = Survey(

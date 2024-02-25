@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    {{current_question.question}}
+    <form action="/answers" method="post">
+    {% for option in current_question.choices%}
+    <p><input type="radio" name="answer" value="{{option}}"> {{option}} </p>
+    {% endfor %}
+    {% if num < 3 %}
+    <button>Next Question</button>
+    {%else%}
+    <button>Submit</button>
+    {%endif%}
+    </form>
+{% endblock %}
